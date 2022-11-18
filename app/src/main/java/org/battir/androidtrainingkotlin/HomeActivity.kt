@@ -1,7 +1,6 @@
 package org.battir.androidtrainingkotlin
 
 import android.app.Activity
-import android.app.DownloadManager
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -34,7 +33,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.btn_TabsActivity).setOnClickListener(this)
         findViewById<Button>(R.id.btn_LiveDataRecyclerView).setOnClickListener(this)
         //endregion
-
     }
 
     // Receiver
@@ -99,7 +97,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this@HomeActivity, ActivitySavedInstance::class.java))
             }
             R.id.btn_views_activity -> {
-                startActivity(Intent(this@HomeActivity, ViewsActivity::class.java))
+                startActivity(Intent(this@HomeActivity, ViewsActivity2::class.java))
             }
             R.id.btn_fragmentActivity -> {
                 startActivity(Intent(this@HomeActivity, FragmentHostActivity::class.java))

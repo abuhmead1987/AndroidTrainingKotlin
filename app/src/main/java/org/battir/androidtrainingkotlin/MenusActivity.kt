@@ -118,9 +118,11 @@ class MenusActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //Handle item selection
         Toast.makeText(applicationContext, "You selected: " + item.title, Toast.LENGTH_SHORT).show()
-        return when (item.itemId) {
-            else -> super.onOptionsItemSelected(item)
-        }
+//        return when (item.itemId) {
+//            else -> super.onOptionsItemSelected(item)
+//        }
+        super.onOptionsItemSelected(item)
+        return true
     }
 
     //Context Menu

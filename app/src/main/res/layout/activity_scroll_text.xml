@@ -12,6 +12,6 @@
         android:autoLink="all"
         android:text="@string/longstring"
         android:textColor="#494949"
-        android:textColorLink="#F44336"
+        android:textColorLink="#0000FF"
         android:textSize="20sp" />
 </ScrollView>
