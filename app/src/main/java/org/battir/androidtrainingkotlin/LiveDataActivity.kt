@@ -12,16 +12,18 @@ import org.battir.androidtrainingkotlin.databinding.ActivityLiveDataBinding
 import org.battir.androidtrainingkotlin.model.MainViewModel
 import org.battir.androidtrainingkotlin.model.User
 
+
 class LiveDataActivity : AppCompatActivity(), LifecycleOwner {
     //Our instance properties
     var viewModel: MainViewModel? = null
     var recyclerView: RecyclerView? = null
     var recyclerViewAdapter: RecyclerViewAdapter? = null
+    var count:Int=0
     //ViewBinding will generate us a class based on our layout name
     private lateinit var binding: ActivityLiveDataBinding
     //Users live data
     var userListUpdateObserver: Observer<ArrayList<User>?> =
-        Observer<ArrayList<User>?> { userArrayList ->
+        Observer<ArrayList<User>?>() { userArrayList ->
             recyclerViewAdapter = RecyclerViewAdapter(this@LiveDataActivity, userArrayList)
             recyclerView!!.layoutManager = LinearLayoutManager(this@LiveDataActivity)
             recyclerView!!.adapter = recyclerViewAdapter
@@ -40,7 +42,16 @@ class LiveDataActivity : AppCompatActivity(), LifecycleOwner {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         //observe our users livedata
         viewModel?.userMutableLiveData?.observe(this, userListUpdateObserver)
-    }
 
+
+
+        binding.addUser.setOnClickListener({
+            val user:User=User()
+            user.name="UserName ${count}"
+            user.description="UserDesc ${count++}"
+            user.img=R.drawable.ic_user_icon
+            viewModel!!.appendUser(user)
+        })
+    }
 }
 //end

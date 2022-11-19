@@ -20,33 +20,33 @@ class MainViewModel : ViewModel() {
     //generate dummy users
     fun populateList() {
         var user = User()
-        user.name = "John Doe"
-        user.description = "A very great guy"
+        user.name = "Mohammad Hmedat"
+        user.description = "The android trainer"
         user.img= R.drawable.male_young_64
         userArrayList = ArrayList()
         userArrayList!!.add(user)
         user = User()
-        user.name = "Jane Doe"
+        user.name = "Ghazal"
         user.description = "A very good girl"
         user.img=R.drawable.female_64
         userArrayList!!.add(user)
         user = User()
-        user.name = "Kael Doe"
+        user.name = "Zaid"
         user.description = "A very powerful guy"
         user.img=R.drawable.male_office_64
         userArrayList!!.add(user)
         user = User()
-        user.name = "Teresa Doe"
+        user.name = "Nagham"
         user.description = "A very beautiful girl"
         user.img=R.drawable.feamle_avatar_64
         userArrayList!!.add(user)
         user = User()
-        user.name = "Ronnie Doe"
+        user.name = "MM"
         user.description = "A very kind guy"
         user.img=R.drawable.male_grandma_64
         userArrayList!!.add(user)
         user = User()
-        user.name = "Mary Doe"
+        user.name = "AA"
         user.description = "A very helpful girl"
         user.img=R.drawable.female_afro_mp4
         userArrayList!!.add(user)
@@ -54,6 +54,7 @@ class MainViewModel : ViewModel() {
 
     fun appendUser(user:User){
         userArrayList!!.add(user)
+        userMutableLiveData.postValue(userArrayList)
     }
     init {
         init()
