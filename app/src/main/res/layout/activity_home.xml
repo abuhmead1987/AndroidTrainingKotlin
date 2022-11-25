@@ -87,6 +87,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LiveData RecyclerView Activity"></Button>
+        <Button
+            android:id="@+id/btn_PermissionsActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Permissions Activity"></Button>
 
     </LinearLayout>
 </ScrollView>

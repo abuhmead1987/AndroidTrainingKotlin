@@ -32,6 +32,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.btn_MenusActivity).setOnClickListener(this)
         findViewById<Button>(R.id.btn_TabsActivity).setOnClickListener(this)
         findViewById<Button>(R.id.btn_LiveDataRecyclerView).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_PermissionsActivity).setOnClickListener(this)
         //endregion
     }
 
@@ -113,6 +114,9 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_LiveDataRecyclerView -> {
                 startActivity(Intent(this@HomeActivity, LiveDataActivity::class.java))
+            }
+            R.id.btn_PermissionsActivity -> {
+                startActivity(Intent(this@HomeActivity, PermissionsRequestActivity::class.java))
             }
 
         }
